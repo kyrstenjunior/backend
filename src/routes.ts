@@ -1,6 +1,5 @@
 // General Imports
 import { Router, Request, Response } from "express";
-import multer from "multer";
 import uploadConfig from './config/multer';
 
 // controllers users
@@ -30,7 +29,6 @@ import { DetailOrderController } from "./controllers/order/DetailOrderController
 import { FinishOrderController } from "./controllers/order/FinishOrderController";
 
 const router = Router();
-const upload = multer(uploadConfig.upload("./tmp"));
 
 /* ---------- Rotas User ---------- */ 
 // Rota chama o Controller, Controller chama o Service que executa a requisição e vem devolvendo os retornos
