@@ -23,14 +23,6 @@ app.use(fileUpload({
 // usa as rotas definidas no router
 app.use(router);
 
-// cria uma rota estatica para verificar se a foto existe
-// tenho na minha pasta temp o arquivo: 2e92ab37ceb7a728fceb849a43650bed-pizza-calabresa.jpg
-// para acessá-lo via url: http://localhost:3333/files/2e92ab37ceb7a728fceb849a43650bed-pizza-calabresa.jpg
-app.use(
-    '/files',
-    express.static(path.resolve(__dirname, '..', 'tmp'))
-);
-
 // Middleware para criar excessões para erros
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
 

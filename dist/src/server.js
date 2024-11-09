@@ -6,7 +6,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 require("express-async-errors");
 const cors_1 = __importDefault(require("cors"));
-const path_1 = __importDefault(require("path"));
 const express_fileupload_1 = __importDefault(require("express-fileupload"));
 const routes_1 = require("./routes");
 // setando express como app
@@ -21,10 +20,6 @@ app.use((0, express_fileupload_1.default)({
 }));
 // usa as rotas definidas no router
 app.use(routes_1.router);
-// cria uma rota estatica para verificar se a foto existe
-// tenho na minha pasta temp o arquivo: 2e92ab37ceb7a728fceb849a43650bed-pizza-calabresa.jpg
-// para acessá-lo via url: http://localhost:3333/files/2e92ab37ceb7a728fceb849a43650bed-pizza-calabresa.jpg
-app.use('/files', express_1.default.static(path_1.default.resolve(__dirname, '..', 'tmp')));
 // Middleware para criar excessões para erros
 app.use((err, req, res, next) => {
     // se for uma instancia do tipo Error
