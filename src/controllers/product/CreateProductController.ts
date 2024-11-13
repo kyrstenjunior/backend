@@ -16,7 +16,7 @@ class CreateProductController {
 
         const createProductService = new CreateProductService();
 
-        console.log(req);
+        console.log(req.files);
         
         if(!req.files || Object.keys(req.files).length === 0) {
             throw new Error("Error upload file");
