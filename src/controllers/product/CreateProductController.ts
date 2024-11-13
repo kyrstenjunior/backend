@@ -18,7 +18,7 @@ class CreateProductController {
         
         if(!req.files || Object.keys(req.files).length === 0) {
             console.log(req);
-            throw new Error("Error upload file");
+            // throw new Error("Error upload file");
         } else {
 
             const file: UploadedFile = req.files['file'];
